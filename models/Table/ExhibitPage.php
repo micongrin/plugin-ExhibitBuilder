@@ -37,7 +37,8 @@ class Table_ExhibitPage extends Omeka_Db_Table
      * @param array $params
      */
     public function applySearchFilters($select, $params)
-    {
+    {   
+        parent::applySearchFilters($select, $params);
         if(isset($params['parent'])) {
             if(is_numeric($params['parent'])) {
                 $this->filterByParentId($select, $params['parent']);
